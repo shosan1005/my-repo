@@ -1,5 +1,8 @@
 name: Hello
 
+env:
+    TEXT_PATH: my_text.txt
+
 on:
     workflow_dispatch:
 
@@ -13,3 +16,6 @@ jobs:
 
             - name: Run Hello
               run: python hello.py
+            
+            - name: Run Output Text
+              run: python output_text.py ${{env.TEXT_PATH}}
