@@ -25,3 +25,9 @@ jobs:
               with:
                 name: my-artifact
                 path: ${{env.TEXT_DIR}}
+
+            - name: Upload Cache
+              uses: actions/cache@v4
+              with:
+                key: my-cache-${{github.ref_name}}
+                path: ${{env.TEXT_DIR}}
