@@ -1,7 +1,7 @@
 name: Hello
 
 env:
-    TEXT_PATH: my_text.txt
+    TEXT_DIR: my_text
 
 on:
     workflow_dispatch:
@@ -18,4 +18,10 @@ jobs:
               run: python hello.py
             
             - name: Run Output Text
-              run: python output_text.py ${{env.TEXT_PATH}}
+              run: python output_text.py ${{env.TEXT_DIR}}
+            
+            - name: Upload Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: my-artifact
+                path: ${{env.TEXT_DIR}}

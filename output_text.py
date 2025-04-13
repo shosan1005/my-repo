@@ -1,7 +1,9 @@
 import sys
 import os
 
-path = sys.argv[1]
+dir = sys.argv[1]
+path = os.path.join(dir, "my_text.txt")
+os.makedirs(dir)
 
 f = open(path, 'a', encoding="utf-8")
 
