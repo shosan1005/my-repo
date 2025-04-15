@@ -16,7 +16,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Run Hello
-              run: python hello.py
+              run: echo "exit_code=python hello.py" >> "$GITHUB_ENV"
             
             - name: Run Output Text
               run: python output_text.py ${{env.TEXT_DIR}}
@@ -32,3 +32,6 @@ jobs:
               with:
                 name: my-artifact
                 path: ${{env.TEXT_DIR}}
+
+            - name: Check Exit Code
+              run: exit $exit_code
