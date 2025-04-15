@@ -16,9 +16,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Run Hello
-              run: | 
-                ERR_CODE = $(python hello.py)
-                echo "ERR_CODE=$ERR_CODE" >> $GITHUB_ENV
+              run: python hello.py
             
             - name: Run Output Text
               run: python output_text.py ${{env.TEXT_DIR}}
