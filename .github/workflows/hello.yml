@@ -5,6 +5,7 @@ env:
 
 on:
     workflow_dispatch:
+    workflow_call:
 
 jobs:
     hello:
@@ -19,12 +20,6 @@ jobs:
             
             - name: Run Output Text
               run: python output_text.py ${{env.TEXT_DIR}}
-
-            - name: Upload Cache
-              uses: actions/cache/save@v4
-              with:
-                  key: my-cache-${{github.ref_name}}
-                  path: ${{env.TEXT_DIR}}
             
             - name: Restore Cache
               uses: actions/cache/restore@v4
