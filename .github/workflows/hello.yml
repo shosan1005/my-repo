@@ -34,4 +34,4 @@ jobs:
                 path: ${{env.TEXT_DIR}}
 
             - name: Check Exit Code
-              run: exit ${ERR_CODE}
+              run: exit $ERR_CODE
