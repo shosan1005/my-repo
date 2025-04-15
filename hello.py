@@ -1,5 +1,1 @@
-import sys
-
-print("Hello")
-
-sys.exit(1)
+print(1)
