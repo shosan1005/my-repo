@@ -17,9 +17,9 @@ jobs:
 
             - name: Run Hello
               run: |
-                  #python hello.py
+                  python hello.py
                   echo $LastExitCode
-                  echo "action_state=yellow" >> "$GITHUB_ENV"
+                  echo "TEST=1" >> "$GITHUB_ENV"
               continue-on-error: true
             
             - name: Run Output Text
