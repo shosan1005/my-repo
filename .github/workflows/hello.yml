@@ -20,7 +20,7 @@ jobs:
                   python hello.py
                   echo $GITHUB_ENV
                   echo $LastExitCode
-                  echo "RESULT=$LastExitCode" >> env:GITHUB_ENV
+                  echo "RESULT=$LastExitCode" >> $env:GITHUB_ENV
               continue-on-error: true
             
             - name: Run Output Text
