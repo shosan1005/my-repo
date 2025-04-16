@@ -19,7 +19,7 @@ jobs:
               run: |
                   python hello.py
                   echo $LastExitCode
-                  $LastExitCode=0
+              continue-on-error: true
             
             - name: Run Output Text
               run: python output_text.py ${{env.TEXT_DIR}}
