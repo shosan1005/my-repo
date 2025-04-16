@@ -20,7 +20,7 @@ jobs:
                   python hello.py
                   echo $GITHUB_ENV
                   echo $LastExitCode
-                  $GITHUB_ENV=$GITHUB_ENV+"`n"+"RESULT=$LastExitCode"
+                  echo "RESULT=$LastExitCode" >> env:GITHUB_ENV
               continue-on-error: true
             
             - name: Run Output Text
@@ -39,4 +39,4 @@ jobs:
                 path: ${{env.TEXT_DIR}}
 
             - name: Check Exit Code
-              run: exit $RESULT
+              run: exit $env:RESULT
