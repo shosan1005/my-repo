@@ -18,6 +18,7 @@ jobs:
             - name: Run Hello
               run: |
                   python hello.py
+                  echo $GITHUB_ENV
                   echo $LastExitCode
                   $GITHUB_ENV=$GITHUB_ENV+"`n"+"RESULT=$LastExitCode"
               continue-on-error: true
