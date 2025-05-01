@@ -21,7 +21,7 @@ jobs:
                   echo $GITHUB_ENV
                   echo $LastExitCode
                   echo "RESULT=$LastExitCode" >> $env:GITHUB_ENV
-                  echo -e "Revision: ${GITHUB_SHA:0:8}"
+                  echo "Revision: ${GITHUB_SHA:0:8}"
               continue-on-error: true
             
             - name: Run Output Text
