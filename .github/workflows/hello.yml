@@ -26,7 +26,7 @@ jobs:
                   echo ${{ github.actor }}
                   echo ${{ steps.checkout.outputs.ref }}
                   echo ${{ steps.checkout.outputs.commit }}
-                  echo $env:TMP
+                  echo $env:BOARD_HW_VERSION
               continue-on-error: true
             
             - name: Run Output Text
