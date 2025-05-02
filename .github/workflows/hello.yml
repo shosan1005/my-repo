@@ -26,6 +26,7 @@ jobs:
                   echo ${{ github.actor }}
                   echo ${{ steps.checkout.outputs.ref }}
                   echo ${{ steps.checkout.outputs.commit }}
+                  echo $env:TMP
               continue-on-error: true
             
             - name: Run Output Text
