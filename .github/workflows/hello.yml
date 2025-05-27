@@ -19,11 +19,16 @@ jobs:
               id: checkout
               uses: actions/checkout@v4
 
+            - name: GetTarget
+              id: get-target-name
+              run: |
+                  $target = "${{ env.ROOT }}".repalce("${{ env.SOURCE }}", "")
+                  echo "target=$target" >> $outputs:GITHUB_OUTPUT
+
             - name: TestReplace
               run: |
-                  $TEST = "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", ""
-                  echo $TEST
-                  echo ${ "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", "" }
+                  echo ${{ steps.get-target-name.outputs.target }}
+                  
               
 
             
