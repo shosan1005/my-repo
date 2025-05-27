@@ -5,8 +5,19 @@ env:
 
 on:
     workflow_dispatch:
-    workflow_call:
-    push:
+        inputs:
+            source:
+                description: |
+                  ソース
+                required: false
+                default: AAA/BBB/CCC/DDD/EEE
+
+            root:
+                description: |
+                  ルート
+                required: false
+                default: AAA/BBB/CCC
+    workflow_call:    
 
 jobs:
     hello:
@@ -17,32 +28,8 @@ jobs:
               id: checkout
               uses: actions/checkout@v4
 
-            - name: Run Hello
-              run: |
-                  python hello.py
-                  echo $GITHUB_ENV
-                  echo $LastExitCode
-                  echo "RESULT=$LastExitCode" >> $env:GITHUB_ENV
-                  echo ${{ github.actor }}
-                  echo ${{ steps.checkout.outputs.ref }}
-                  echo ${{ steps.checkout.outputs.commit }}
-                  echo $env:BOARD_HW_VERSION
-              continue-on-error: true
-            
-            - name: Run Output Text
-              run: python output_text.py ${{env.TEXT_DIR}}
-            
-            - name: Restore Cache
-              uses: actions/cache/restore@v4
-              with:
-                key: my-cache-${{github.ref_name}}
-                path: ${{env.TEXT_DIR}}
-            
-            - name: Upload Artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: my-artifact
-                path: ${{env.TEXT_DIR}}
+            - name: TestReplace
+              run: echo ${{ inputs.source }}
+              
 
-            - name: Check Exit Code
-              run: exit $env:RESULT
+            
