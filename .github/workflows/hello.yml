@@ -27,7 +27,7 @@ jobs:
 
             - name: TestReplace
               run: |
-                  echo ${{ steps.get-target-name.env.target }}
+                  echo $env:target
                   
               
 
