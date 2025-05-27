@@ -4,7 +4,6 @@ env:
     TEXT_DIR: my_text
     SOURCE: AAA/BBB/CCC/DDD/EEE
     ROOT: AAA/BBB/CCC
-    TOXENV: A.B.C.D.E
 
 on:
     workflow_dispatch:
@@ -24,9 +23,8 @@ jobs:
               run: |
                   echo ${{ env.ROOT }}
                   echo ${{ env.SOURCE }}
-                  $A=${{ env.TOXENV }}
-                  $B=${ A//. }
-                  echo ${{ B }}
+                  $TEST=${{ env.ROOT }}
+                  echo ${{ TEST }}
               
 
             
