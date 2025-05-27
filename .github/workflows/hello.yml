@@ -29,7 +29,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: TestReplace
-              run: echo ${{ inputs.source }} -replace ${{ inputs.root }}, ""
+              run: echo ${{ inputs.source }}.Replace(${{ inputs.root }}, "")
               
 
             
