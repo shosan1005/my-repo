@@ -24,7 +24,7 @@ jobs:
                   echo ${{ env.ROOT }}
                   echo ${{ env.SOURCE }}
                   TEST="${{ env.ROOT }}"
-                  echo ${{ TEST }}
+                  echo $TEST
               
 
             
