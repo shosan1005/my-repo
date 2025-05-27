@@ -22,7 +22,8 @@ jobs:
             - name: TestReplace
               run: |
                   $TEST="${{ env.ROOT }}"
-                  $TEST2="${TEST//AAA/}"              
+                  $TEST2="${TEST//AAA/}"
+                  echo $TEST
                   echo $TEST2
               
 
