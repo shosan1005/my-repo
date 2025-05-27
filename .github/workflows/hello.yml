@@ -2,8 +2,8 @@ name: Hello
 
 env:
     TEXT_DIR: my_text
-    SOURCE: AAA/BBB/CCC/DDD/EEE
-    ROOT: AAA/BBB/CCC
+    SOURCE: AAA/BBB/CCC
+    ROOT: AAA/BBB/CCC/DDD/EEE
 
 on:
     workflow_dispatch:
