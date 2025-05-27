@@ -26,7 +26,7 @@ jobs:
                   echo "target=$target" >> $outputs:GITHUB_OUTPUT
 
             - name: TestReplace
-              run: echo ${{ outputs.target }}
+              run: echo ${{ steps.get-target-name.outputs.target }}
                   
               
 
