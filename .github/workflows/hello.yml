@@ -21,7 +21,8 @@ jobs:
 
             - name: TestReplace
               run: |
-                  echo "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", ""
+                  $TEST = "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", ""
+                  echo $TEST
               
 
             
