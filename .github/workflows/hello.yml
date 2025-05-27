@@ -22,7 +22,7 @@ jobs:
             - name: GetTarget
               id: get-target-name
               run: |
-                  $target = "${{ env.ROOT }}".repalce("${{ env.SOURCE }}", "")
+                  $target = "${{ env.ROOT }}".replace("${{ env.SOURCE }}", "")
                   echo "target=$target" >> $outputs:GITHUB_OUTPUT
 
             - name: TestReplace
