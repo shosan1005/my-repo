@@ -2,22 +2,13 @@ name: Hello
 
 env:
     TEXT_DIR: my_text
+    SOURCE: AAA/BBB/CCC/DDD/EEE
+    ROOT: AAA/BBB/CCC
 
 on:
     workflow_dispatch:
-        inputs:
-            source:
-                description: |
-                  ソース
-                required: false
-                default: AAA/BBB/CCC/DDD/EEE
-
-            root:
-                description: |
-                  ルート
-                required: false
-                default: AAA/BBB/CCC
     workflow_call:    
+    push:
 
 jobs:
     hello:
@@ -30,10 +21,8 @@ jobs:
 
             - name: TestReplace
               run: |
-                  echo ${{ inputs.source }}
-                  echo ${{ inputs.root }}
-                  $name = inputs.source.replace(inputs.root,"")
-                  echo $name
+                  echo ${{ env.ROOT }}
+                  echo ${{ env.SOURCE }}
               
 
             
