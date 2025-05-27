@@ -23,7 +23,7 @@ jobs:
               id: get-target-name
               run: |
                   $target = "${{ env.ROOT }}".replace("${{ env.SOURCE }}", "")
-                  echo "target=$target" >> $GITHUB_OUTPUT
+                  echo "target=$target" >> $output:GITHUB_OUTPUT
 
             - name: TestReplace
               run: echo ${{ steps.get-target-name.outputs.target }}
