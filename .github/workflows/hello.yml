@@ -23,6 +23,7 @@ jobs:
               run: |
                   $TEST = "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", ""
                   echo $TEST
+                  echo ${{ "${{ env.ROOT }}" -replace "${{ env.SOURCE }}", "" }}
               
 
             
