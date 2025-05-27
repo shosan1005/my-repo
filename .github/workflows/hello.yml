@@ -23,7 +23,7 @@ jobs:
               run: |
                   echo ${{ env.ROOT }}
                   echo ${{ env.SOURCE }}
-                  $TEST="${{ env.ROOT }}"
+                  $TEST="${{ env.ROOT//AAA/aaa }}"
                   echo $TEST
               
 
