@@ -30,7 +30,9 @@ jobs:
 
             - name: TestReplace
               run: |
-                  $name = inputs.source.replace(inputs.root, "")
+                  echo ${{ inputs.source }}
+                  echo ${{ inputs.root }}
+                  $name = ${{ inputs.source }}.replace(${{ inputs.root }},"")
                   echo $name
               
 
