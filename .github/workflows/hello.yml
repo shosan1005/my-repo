@@ -24,9 +24,9 @@ jobs:
               run: |
                   echo ${{ env.ROOT }}
                   echo ${{ env.SOURCE }}
-                  A=${{ env.TOXENV }}
-                  B=${ A//. }
-                  echo ${{ A }}
+                  $A=${{ env.TOXENV }}
+                  $B=${ A//. }
+                  echo ${{ B }}
               
 
             
