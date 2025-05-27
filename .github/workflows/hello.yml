@@ -4,6 +4,7 @@ env:
     TEXT_DIR: my_text
     SOURCE: AAA/BBB/CCC/DDD/EEE
     ROOT: AAA/BBB/CCC
+    TOXENV: "py${{ matrix.python }}-django${{ matrix.django }}"
 
 on:
     workflow_dispatch:
@@ -23,6 +24,9 @@ jobs:
               run: |
                   echo ${{ env.ROOT }}
                   echo ${{ env.SOURCE }}
+                  TOXENV=${{ env.TOXENV }}
+                  TOXENV=${ TOXENV//. }
+                  echo ${{ TOXENV }}
               
 
             
