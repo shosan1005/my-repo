@@ -26,5 +26,5 @@ runs:
       shell: pwsh
       id: get-output-item
       run: |
-        $output = "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "")
-        echo "output=$output" >> $env:GITHUB_OUTPUT
+        $output-name = "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "")
+        echo "output-name=$output-name" >> $env:GITHUB_OUTPUT
