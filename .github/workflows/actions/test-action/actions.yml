@@ -1,0 +1,30 @@
+name: テスト用アクション
+description: |
+  テスト用アクション
+
+inputs:
+  input-a:
+    description: |
+      入力A
+    required: true
+
+  input-b:
+    description: |
+      入力B
+    required: true
+
+outputs:
+  output-a:
+    description: |
+      出力A
+    value: ${{ steps.get-output-item.outputs.output-item }}
+
+runs:
+  using: composite
+  steps:
+    - name: アクション内のステップ
+      shell: pwsh
+      id: get-output-item
+      run: |
+        $output-item = "${{ inputs.input-b }}".repalce("${{ inputs.input-a }}", "")
+        echo "output-item=$output-item" >> $env:GITHUB_OUTPUT
