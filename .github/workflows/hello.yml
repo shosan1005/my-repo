@@ -21,12 +21,13 @@ jobs:
 
             - name: GetTarget
               id: get-target-name
-              run: |
-                  $target = "${{ env.ROOT }}".replace("${{ env.SOURCE }}", "")
-                  echo "target=$target" >> $env:GITHUB_OUTPUT
+              uses: ./.github/actions/test-actions
+              with:
+                  input-a: ${{ env.SOURCE }}
+                  input-b: ${{ env.ROOT }}
 
-            - name: TestReplace
-              run: echo ${{ steps.get-target-name.outputs.target }}
+            - name: EchoOutput
+              run: echo ${{ steps.get-target-name.outputs.output-a }}
                   
               
 
