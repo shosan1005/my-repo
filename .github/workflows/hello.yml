@@ -21,7 +21,7 @@ jobs:
 
             - name: GetTarget
               id: get-target-name
-              uses: ./.github/actions/test-actions
+              uses: ./.github/actions/test-action
               with:
                   input-a: ${{ env.SOURCE }}
                   input-b: ${{ env.ROOT }}
