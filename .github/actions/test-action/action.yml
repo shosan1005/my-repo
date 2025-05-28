@@ -17,7 +17,7 @@ outputs:
   output-a:
     description: |
       出力A
-    value: ${{ "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "") }}
+    value: ${{ steps.get-output-item.outputs.output-name }}
 
 runs:
   using: composite
