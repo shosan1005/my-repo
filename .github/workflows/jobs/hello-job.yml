@@ -1,1 +1,12 @@
+name: Hello-Job
 
+on:
+    workflow_call:
+
+jobs:
+    hello:
+        runs-on: windows-latest
+
+        steps:
+            - name: EchoHello
+              run: echo "Hello"
