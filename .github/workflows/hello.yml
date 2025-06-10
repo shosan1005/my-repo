@@ -7,8 +7,7 @@ env:
 
 on:
     workflow_dispatch:
-    workflow_call:    
-    push:
+    workflow_call:
 
 jobs:
     hello:
@@ -21,7 +20,7 @@ jobs:
 
             - name: GetTarget
               id: get-target-name
-              uses: ./.github/actions/test-action
+              uses: ./.github/jobs/actions/test-action
               with:
                   input-a: ${{ env.SOURCE }}
                   input-b: ${{ env.ROOT }}
