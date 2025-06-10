@@ -27,6 +27,9 @@ jobs:
 
             - name: EchoOutput
               run: echo ${{ steps.get-target-name.outputs.output-a }}
+
+            - name: EchoHell
+              uses: ./.github/workflows/jobs/hello-job.yml
                   
               
 
