@@ -13,11 +13,27 @@ inputs:
       入力B
     required: true
 
+  cache-test-path:
+    description: |
+      キャッシュテストパス
+    required: true
+
+  cache-test-name:
+    description: |
+      キャッシュテスト名
+    required: true 
+
 outputs:
   output-a:
     description: |
       出力A
     value: ${{ steps.get-output-item.outputs.output-name }}
+
+  cache-key:
+    description: |
+      出力A
+    value: ${{ inputs.cache-test-name }}-${{ hashFiles(format('{0}/**', inputs.cache-test-path)) }}
+    
 
 runs:
   using: composite
