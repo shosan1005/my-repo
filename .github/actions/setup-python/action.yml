@@ -1,0 +1,29 @@
+name: Pythonセットアップ
+
+inputs:
+  python-version:
+    description: Pythonバージョン
+    required: false
+    default: "3.13.2"
+
+runs:
+  using: composite
+  steps:
+    - name: Pythonバージョン指定
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Pythonモジュールのインストール
+      shell: pwsh
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Pythonバージョン確認
+      shell: pwsh
+      run: python -V
+
+    - name: インストール済みパッケージ確認
+      shell: pwsh
+      run: pip list
