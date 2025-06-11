@@ -1,0 +1,30 @@
+name: テスト用Config
+description: |
+  テスト用Config
+
+inputs:
+  input-a:
+    description: |
+      入力A
+    required: true
+
+  input-b:
+    description: |
+      入力B
+    required: true
+
+outputs:
+  output-a:
+    description: |
+      出力A
+    value: ${{ steps.get-output-item.outputs.output-name }}
+
+runs:
+  using: composite
+  steps:
+    - name: アクション内のステップ
+      shell: pwsh
+      id: get-output-item
+      run: |
+        $output_name = "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "")
+        echo "output-name=$output_name" >> $env:GITHUB_OUTPUT
