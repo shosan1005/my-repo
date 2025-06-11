@@ -31,8 +31,8 @@ outputs:
 
   cache-key:
     description: |
-      出力A
-    value: ${{ inputs.cache-test-name }}-${{ hashFiles(format('{0}/**', inputs.cache-test-path)) }}
+      キャッシュキー
+    value: ${{ steps.get-cache-key.outputs.cache-key }}
     
 
 runs:
@@ -44,3 +44,10 @@ runs:
       run: |
         $output_name = "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "")
         echo "output-name=$output_name" >> $env:GITHUB_OUTPUT
+
+    - name: キャッシュキー取得
+      shell: pwsh
+      id: get-cache-key
+      run: |
+        $cache_key = ${{ inputs.cache-test-name }}-${{ hashFiles(format('{0}/**', inputs.cache-test-path)) }}
+        echo "cache-key=$cache_key" >> $env:GITHUB_OUTPUT
