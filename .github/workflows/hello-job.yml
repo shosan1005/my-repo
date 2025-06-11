@@ -19,6 +19,9 @@ jobs:
               id: checkout
               uses: actions/checkout@v4
 
+            - name: PythonSetup
+              uses: ./.github/actions/setup-python
+
             - name: GetTarget
               id: get-target-name
               uses: ./.github/actions/config/test-action
