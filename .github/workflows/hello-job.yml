@@ -32,7 +32,7 @@ jobs:
             - name: CacheTest
               uses: actions/cache/save@v4
               with:
-                  key: ${{ env.TEST_CACHE_NAME }}
+                  key: ${{ env.TEST_CACHE_NAME }}-${{ hashFiles(format('{0}/**', env.TEST_CACHE_PATH)) }}
                   path: ${{ env.TEST_CACHE_PATH }}
               
 
