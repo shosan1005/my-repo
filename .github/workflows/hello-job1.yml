@@ -1,4 +1,4 @@
-name: Hello
+name: Hello-Job1
 
 env:
     TEXT_DIR: my_text
@@ -6,7 +6,6 @@ env:
     ROOT: AAA/BBB/CCC/DDD/EEE
 
 on:
-    workflow_dispatch:
     workflow_call:
 
 jobs:
@@ -27,9 +26,6 @@ jobs:
 
             - name: EchoOutput
               run: echo ${{ steps.get-target-name.outputs.output-a }}
-
-            - name: EchoHello
-              uses: ./.github/workflows/hello-job.yml
                   
               
 
