@@ -4,8 +4,8 @@ env:
     TEXT_DIR: my_text
     SOURCE: AAA/BBB/CCC
     ROOT: AAA/BBB/CCC/DDD/EEE
-    TEST_CACHE_PATH: test_cache
-    TEST_CACHE_NAME: test_cache
+    TEST_CACHE_PATH: cache-test
+    TEST_CACHE_NAME: cache-test
 
 on:
     workflow_call:
