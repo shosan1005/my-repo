@@ -4,6 +4,8 @@ env:
     TEXT_DIR: my_text
     SOURCE: AAA/BBB/CCC
     ROOT: AAA/BBB/CCC/DDD/EEE
+    TEST_CACHE_PATH: test/cache
+    TEST_CACHE_NAME: test_cache
 
 on:
     workflow_call:
@@ -26,7 +28,12 @@ jobs:
 
             - name: EchoOutput
               run: echo ${{ steps.get-target-name.outputs.output-a }}
-                  
+
+            - name: CacheTest
+              uses: actions/cache/save@v4
+              with:
+                  key: ${{ env.TEST_CACHE_NAME }}
+                  path: ${{ env.TEST_CACHE_PATH }}
               
 
             
