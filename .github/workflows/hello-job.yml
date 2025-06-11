@@ -19,7 +19,7 @@ jobs:
 
             - name: GetTarget
               id: get-target-name
-              uses: ./.github/actions/config/test-action
+              uses: ./.github/config/test-action
               with:
                   input-a: ${{ env.SOURCE }}
                   input-b: ${{ env.ROOT }}
