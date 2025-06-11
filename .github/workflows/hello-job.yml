@@ -1,11 +1,11 @@
-name: Hello-Job1
+name: Hello-Job
 
 env:
     TEXT_DIR: my_text
     SOURCE: AAA/BBB/CCC
     ROOT: AAA/BBB/CCC/DDD/EEE
-    TEST_CACHE_PATH: cache-test
-    TEST_CACHE_NAME: cache-test
+    CACHE_TEST_PATH: cache-test
+    CACHE_TEST_NAME: cache-test
 
 on:
     workflow_call:
@@ -32,8 +32,8 @@ jobs:
             - name: CacheTest
               uses: actions/cache/save@v4
               with:
-                  key: ${{ env.TEST_CACHE_NAME }}-${{ hashFiles(format('{0}/**', env.TEST_CACHE_PATH)) }}
-                  path: ${{ env.TEST_CACHE_PATH }}
+                  key: ${{ env.CACHE_TEST_NAME }}-${{ hashFiles(format('{0}/**', env.CACHE_TEST_PATH)) }}
+                  path: ${{ env.CACHE_TEST_PATH }}
               
 
             
