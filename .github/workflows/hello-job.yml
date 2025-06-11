@@ -8,5 +8,10 @@ jobs:
         runs-on: windows-latest
 
         steps:
+            - name: Checkout
+              id: checkout
+              uses: actions/checkout@v4
+
+        steps:
             - name: EchoHello
               run: echo "Hello"
