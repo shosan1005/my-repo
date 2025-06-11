@@ -1,0 +1,9 @@
+name: Hello-Job
+
+on:
+    workflow_dispatch:
+
+jobs:
+    hello:
+        name: EchoHello
+        uses: ./.github/workflows/hello-job1.yml
