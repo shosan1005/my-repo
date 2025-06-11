@@ -1,9 +1,9 @@
-name: Hello-Job
+name: Hello
 
 on:
     workflow_dispatch:
 
 jobs:
     hello:
-        name: EchoHello
-        uses: ./.github/workflows/hello-job1.yml
+        name: Hello
+        uses: ./.github/workflows/hello-job.yml
