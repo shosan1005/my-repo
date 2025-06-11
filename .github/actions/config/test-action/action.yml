@@ -49,5 +49,5 @@ runs:
       shell: pwsh
       id: get-cache-key
       run: |
-        $cache_key = "${{ inputs.cache-test-name }}-${{ hashFiles(inputs.cache-test-path + '/**') }}"
+        $cache_key = "${{ inputs.cache-test-name }}-${{ hashFiles(format('{0}/**', inputs.cache-test-path)) }}"
         echo "cache-key=$cache_key" >> $env:GITHUB_OUTPUT
