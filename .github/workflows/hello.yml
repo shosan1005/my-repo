@@ -29,7 +29,7 @@ jobs:
               run: echo ${{ steps.get-target-name.outputs.output-a }}
 
             - name: EchoHello
-              uses: ./.github/workflows/jobs/hello-job.yml
+              uses: ./.github/workflows/hello-job.yml
                   
               
 
