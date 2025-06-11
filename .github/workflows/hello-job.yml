@@ -25,14 +25,18 @@ jobs:
               with:
                   input-a: ${{ env.SOURCE }}
                   input-b: ${{ env.ROOT }}
+                  cache-test-path: ${{ env.CACHE_TEST_PATH }}
+                  cache-test-name: ${{ env.CACHE_TEST_NAME }}
 
             - name: EchoOutput
-              run: echo ${{ steps.get-target-name.outputs.output-a }}
+              run: |
+                  echo ${{ steps.get-target-name.outputs.output-a }}
+                  echo ${{ steps.get-target-name.outputs.cache-key }}
 
             - name: CacheTest
               uses: actions/cache/save@v4
               with:
-                  key: ${{ env.CACHE_TEST_NAME }}-${{ hashFiles(format('{0}/**', env.CACHE_TEST_PATH)) }}
+                  key: ${{ steps.get-target-name.outputs.cache-key }}
                   path: ${{ env.CACHE_TEST_PATH }}
               
 
