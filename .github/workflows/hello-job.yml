@@ -45,6 +45,9 @@ jobs:
               with:
                   key: ${{ steps.get-target-name.outputs.cache-key }}
                   path: ${{ env.CACHE_TEST_PATH }}
+
+            - name: CHCPCHECK
+              run: chcp
               
 
             
