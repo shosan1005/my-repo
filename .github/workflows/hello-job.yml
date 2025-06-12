@@ -19,8 +19,8 @@ jobs:
               id: checkout
               uses: actions/checkout@v4
 
-            - name: PythonSetup
-              uses: ./.github/actions/setup-python
+            # - name: PythonSetup
+            #   uses: ./.github/actions/setup-python
 
             - name: GetTarget
               id: get-target-name
@@ -32,9 +32,13 @@ jobs:
                   cache-test-name: ${{ env.CACHE_TEST_NAME }}
 
             - name: EchoOutput
+              id: echo-output
               run: |
-                  echo ${{ steps.get-target-name.outputs.output-a }}
                   echo ${{ steps.get-target-name.outputs.cache-key }}
+
+            - name: CheckEchoOutputA
+              if: ${{ steps.get-target-name.outputs.output-a == '' }}
+              run: echo "OK"
 
             - name: CacheTest
               uses: actions/cache/save@v4
