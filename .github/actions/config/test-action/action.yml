@@ -43,7 +43,7 @@ runs:
       id: get-output-item
       run: |
         $output_name = "${{ inputs.input-b }}".replace("${{ inputs.input-a }}", "")
-        echo "output-name=$output_name" >> $env:GITHUB_OUTPUT
+        echo "output-name=" >> $env:GITHUB_OUTPUT
 
     - name: キャッシュキー取得
       shell: pwsh
