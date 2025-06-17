@@ -47,7 +47,7 @@ jobs:
                   path: ${{ env.CACHE_TEST_PATH }}
 
             - name: CHCPCHECK
-              run: chcp
+              run: echo "${{ github.ref_name }}"
               
 
             
