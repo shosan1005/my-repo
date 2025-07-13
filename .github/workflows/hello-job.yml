@@ -45,5 +45,10 @@ jobs:
             - name: CHCPCHECK
               run: echo "${{ github.ref_name }}"
 
-            - name: Get Runner Infos
-              run: gh label list
+            
+            - uses: actions/setup-node@v1
+            - uses: embedded-community/get-runner-labels-action@v1
+              id: runner-labels
+              with:
+                  github-token: ${{ secrets.MY_TOKEN }}
+            - run: echo ${{ steps.runner-labels.outputs.labels }}
