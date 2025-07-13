@@ -46,7 +46,8 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: Get Runner Infos
-              run: echo "${{ github.token }}"
+              run: curl -H "Authorization: token ${{ github.token }} \https://api.github.com/repos/OWNER/REPO/actions/runners
+
               
               
 
