@@ -51,14 +51,8 @@ jobs:
             - name: CHCPCHECK
               run: echo "${{ github.ref_name }}"
 
-            - name: Get Runner Labels
-              uses: embedded-community/get-runner-labels-action@v1
-              id: runner-labels
-              with:
-                  github-token: ${{ secrets.MY_TOKEN }}
-
-            - name: Print Labels
-              run: echo ${{ steps.runner-labels.outputs.labels }}
+            - name: aaaaaa
+              run: GET /repos/${{ github.repository_owner }}/${{ github.repository }}/actions/runners/${{ github.run_id }}/labels
               
               
 
