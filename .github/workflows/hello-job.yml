@@ -47,10 +47,7 @@ jobs:
 
             - name: Get Runner Infos
               run: |
-                  $infos = ${{ runner.* }}
-                  foreach($info in $infos){
-                      echo "$info"
-                  }
+                  echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
               
               
 
