@@ -49,6 +49,4 @@ jobs:
             - uses: actions/setup-node@v1
             - uses: embedded-community/get-runner-labels-action@v0.1.0
               id: runner-labels
-              with:
-                  github-token: ${{ secrets.MY_TOKEN }}
             - run: echo ${{ steps.runner-labels.outputs.labels }}
