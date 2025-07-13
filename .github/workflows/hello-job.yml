@@ -52,7 +52,7 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: Get Runner Labels
-              uses: embedded-community/get-runner-labels-action@v1
+              uses: embedded-community/get-runner-labels-action
               id: runner-labels
               with:
                   github-token: ${{ secrets.MY_TOKEN }}
