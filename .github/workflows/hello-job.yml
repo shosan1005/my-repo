@@ -46,5 +46,7 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: Get Runner Infos
-              run: gh --version
+              run: gh api -H "Accept: application/vnd.github+json" /repos/${{ github.repository_owner }}/${{ github.repository }}/actions/runners
+
+
 
