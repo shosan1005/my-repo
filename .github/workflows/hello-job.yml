@@ -46,8 +46,7 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: Get Runner Infos
-              run: |
-                  GET ${{ github.server_url }}/${{ github.repository }}/actions/runners
+              run: echo $env:GITHUB_ENV
               
               
 
