@@ -46,9 +46,8 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: Get Runner Infos
-              run: curl -H "Authorization: token ${{ github.token }} \https://api.github.com/repos/OWNER/REPO/actions/runners
+              uses: embedded-community/get-runner-labels-action@v1
+              id: runner-labels
 
-              
-              
-
-            
+            - name: Print Runner Labels
+              run: echo ${{ steps.runner-labels.outputs.labels }}
