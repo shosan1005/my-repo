@@ -52,7 +52,7 @@ jobs:
               run: echo "${{ github.ref_name }}"
 
             - name: aaaaaa
-              run: GET /repos/${{ github.repository_owner }}/${{ github.repository }}/actions/runners/${{ github.run_id }}/labels
+              run: echo "${{ runner.labels }}"
               
               
 
