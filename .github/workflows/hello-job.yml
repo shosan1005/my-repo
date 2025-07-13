@@ -51,5 +51,5 @@ jobs:
               id: runner-label
               with:
                   include-org-runners: false
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  github-token: ${{ github.token }}
             - run: echo ${{ steps.runner-labels.outputs.labels }}
