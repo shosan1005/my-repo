@@ -45,8 +45,12 @@ jobs:
             - name: CHCPCHECK
               run: echo "${{ github.ref_name }}"
 
-            - name: aaaaaa
-              run: echo "${{ runner.* }}"
+            - name: Get Runner Infos
+              run: |
+                  $infos = ${{ runner.* }}
+                  foreach($info in $infos){
+                      echo "$info"
+                  }
               
               
 
