@@ -36,20 +36,6 @@ jobs:
             - name: EchoOutput
               id: echo-output
               run: |
-                  echo ${{ steps.get-target-name.outputs.cache-key }}
-
-            - name: CheckEchoOutputA
-              if: ${{ steps.get-target-name.outputs.output-a == '' }}
-              run: echo "OK"
-
-            - name: CHCPCHECK
-              run: echo "${{ github.ref_name }}"
-
-            
-            - uses: actions/setup-node@v1
-            - uses: embedded-community/get-runner-labels-action@v0.1.0
-              id: runner-label
-              with:
-                  include-org-runners: false
-                  github-token: ${{ github.token }}
-            - run: echo ${{ steps.runner-labels.outputs.labels }}
+                  echo "::error title=ErrorTest::This is Error Test"
+                  echo "::warning title=WarningTest::This is Warning Test"
+                  echo "::notice title=NoticeTest::This is Notice Test"
