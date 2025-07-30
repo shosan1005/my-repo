@@ -33,8 +33,8 @@ jobs:
                   cache-test-path: ${{ env.CACHE_TEST_PATH }}
                   cache-test-name: ${{ env.CACHE_TEST_NAME }}
 
-            - name: EchoOutput
-              id: echo-output
+            - name: EchoAnnotations1
+              id: echo-ann1
               run: |
                   echo "::error title=ErrorTest0::This is Error Test0"
                   echo "::error title=ErrorTest1::This is Error Test1"
@@ -46,9 +46,6 @@ jobs:
                   echo "::error title=ErrorTest7::This is Error Test7"
                   echo "::error title=ErrorTest8::This is Error Test8"
                   echo "::error title=ErrorTest9::This is Error Test9"
-                  echo "::error title=ErrorTest10::This is Error Test10"
-                  echo "::error title=ErrorTest11::This is Error Test11"
-                  echo "::error title=ErrorTest12::This is Error Test12"
                   echo "::warning title=WarningTest0::This is Warning Test0"
                   echo "::warning title=WarningTest1::This is Warning Test1"
                   echo "::warning title=WarningTest2::This is Warning Test2"
@@ -59,9 +56,6 @@ jobs:
                   echo "::warning title=WarningTest7::This is Warning Test7"
                   echo "::warning title=WarningTest8::This is Warning Test8"
                   echo "::warning title=WarningTest9::This is Warning Test9"
-                  echo "::warning title=WarningTest10::This is Warning Test10"
-                  echo "::warning title=WarningTest11::This is Warning Test11"
-                  echo "::warning title=WarningTest12::This is Warning Test12"
                   echo "::notice title=NoticeTest0::This is Notice Test0"
                   echo "::notice title=NoticeTest1::This is Notice Test1"
                   echo "::notice title=NoticeTest2::This is Notice Test2"
@@ -72,6 +66,16 @@ jobs:
                   echo "::notice title=NoticeTest7::This is Notice Test7"
                   echo "::notice title=NoticeTest8::This is Notice Test8"
                   echo "::notice title=NoticeTest9::This is Notice Test9"
+
+            - name: EchoAnnotations2
+              id: echo-ann2
+              run: |
+                  echo "::error title=ErrorTest10::This is Error Test10"
+                  echo "::error title=ErrorTest11::This is Error Test11"
+                  echo "::error title=ErrorTest12::This is Error Test12"
+                  echo "::warning title=WarningTest10::This is Warning Test10"
+                  echo "::warning title=WarningTest11::This is Warning Test11"
+                  echo "::warning title=WarningTest12::This is Warning Test12"
                   echo "::notice title=NoticeTest10::This is Notice Test10"
                   echo "::notice title=NoticeTest11::This is Notice Test11"
                   echo "::notice title=NoticeTest12::This is Notice Test12"
