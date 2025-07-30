@@ -21,8 +21,9 @@ jobs:
               with:
                   ref: ${{ github.ref_name }}
 
-            # - name: PythonSetup
-            #   uses: ./.github/actions/setup-python
+            # Problem Machers有効化
+            - name: Enable Matchers
+              run: echo "::add-matcher::.github/demo_matcher.json"
 
             - name: GetTarget
               id: get-target-name
@@ -98,3 +99,7 @@ jobs:
                   echo "::notice title=NoticeTest40::This is Notice Test40"
                   echo "::notice title=NoticeTest41::This is Notice Test41"
                   echo "::notice title=NoticeTest42::This is Notice Test42"
+
+            # Problem Machers無効化
+            - name: Disable Matchers
+              run: echo "::remove-matcher owner=hello_demo::"
