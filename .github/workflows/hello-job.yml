@@ -89,16 +89,9 @@ jobs:
 
             - name: EchoAnnotations4
               run: |
-                  echo "::error title=ErrorTest40::This is Error Test40"
-                  echo "::error title=ErrorTest41::This is Error Test41"
-                  echo "::error title=ErrorTest42::This is Error Test42"
-                  echo "::warning title=WarningTest40::This is Warning Test40"
-                  echo "::warning title=WarningTest41::This is Warning Test41"
-                  echo "::warning title=WarningTest42::This is Warning Test42"
-                  echo "::warning title=WarningTest43::This is Warning Test43"
-                  echo "::notice title=NoticeTest40::This is Notice Test40"
-                  echo "::notice title=NoticeTest41::This is Notice Test41"
-                  echo "::notice title=NoticeTest42::This is Notice Test42"
+                  echo 'badFile.js: line 50, col 11, Error - problem machers error'
+                  echo 'badFile.js: line 50, col 11, Warning - problem machers warning'
+                  echo 'badFile.js: line 50, col 11, Info - problem machers notice'
 
             # Problem Machers無効化
             - name: Disable Matchers
