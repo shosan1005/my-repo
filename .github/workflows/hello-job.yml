@@ -89,9 +89,9 @@ jobs:
 
             - name: EchoAnnotations4
               run: |
-                  echo 'badFile.js: line 50, col 11, Error - problem machers error'
-                  echo 'badFile.js: line 50, col 11, Warning - problem machers warning'
-                  echo 'badFile.js: line 50, col 11, Info - problem machers notice'
+                  echo "Error:error"
+                  echo "Warning:warning"
+                  echo "Info:info"
 
             # Problem Machers無効化
             - name: Disable Matchers
