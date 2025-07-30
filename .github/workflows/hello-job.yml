@@ -45,6 +45,7 @@ jobs:
                   echo "::notice title=NoticeTest0::This is Notice Test0"
                   echo "::notice title=NoticeTest1::This is Notice Test1"
                   echo "::notice title=NoticeTest2::This is Notice Test2"
+                  echo "::notice title=NoticeTest3::This is Notice Test3"
 
             - name: EchoAnnotations1
               run: |
