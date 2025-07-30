@@ -92,3 +92,4 @@ jobs:
                   echo "::notice title=NoticeTest40::This is Notice Test40"
                   echo "::notice title=NoticeTest41::This is Notice Test41"
                   echo "::notice title=NoticeTest42::This is Notice Test42"
+                  echo ::warning file=test.py,line=120,endLine=128,title=test_error::this is test error
