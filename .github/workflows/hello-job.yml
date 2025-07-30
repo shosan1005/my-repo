@@ -37,5 +37,8 @@ jobs:
               id: echo-output
               run: |
                   echo "::error title=ErrorTest::This is Error Test"
+                  echo "::error title=ErrorTest2::This is Error Test2"
                   echo "::warning title=WarningTest::This is Warning Test"
+                  echo "::warning title=WarningTest2::This is Warning Test2"
                   echo "::notice title=NoticeTest::This is Notice Test"
+                  echo "::notice title=NoticeTest2::This is Notice Test2"
