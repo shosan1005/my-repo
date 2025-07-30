@@ -4,7 +4,7 @@
       "owner": "hello_demo",
       "pattern": [
         {
-          "regexp": "^(.+):\\sline\\s(\\d+),\\scol\\s(\\d+),\\s(Error|Warning|Info)\\s-\\s(.+)\\s\\((.+)\\)$",
+          "regexp": "(Error|Warning|Info):(.+)",
           "file": 1,
           "line": 2,
           "column": 3,
