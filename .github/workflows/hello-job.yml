@@ -32,3 +32,6 @@ jobs:
 
             - name: PowerShellScriptTest
               run: .\test.ps1
+
+            - name: OutResult
+              run: Write-Host $env:human_name
