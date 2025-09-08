@@ -34,4 +34,4 @@ jobs:
               run: .\test.ps1
 
             - name: OutResult
-              run: Write-Host $env:human_name
+              run: Write-Host $output:human_name
