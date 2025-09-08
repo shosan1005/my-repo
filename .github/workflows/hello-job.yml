@@ -21,10 +21,6 @@ jobs:
               with:
                   ref: ${{ github.ref_name }}
 
-            # Problem Machers有効化
-            - name: Enable Matchers
-              run: echo "::add-matcher::.github/demo_matcher.json"
-
             - name: GetTarget
               id: get-target-name
               uses: ./.github/actions/config/test-action
@@ -34,5 +30,5 @@ jobs:
                   cache-test-path: ${{ env.CACHE_TEST_PATH }}
                   cache-test-name: ${{ env.CACHE_TEST_NAME }}
 
-            - name: EchoAnnotations0
+            - name: PowerShellScriptTest
               run: .\test.ps1
